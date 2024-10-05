@@ -21,4 +21,4 @@ on:
   name: Deploy to Surge.sh
       env:
         SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
-      run: surge --project ./ --domain tu-dominio.surge.sh
+      run: surge --project ./ --domain WebConSurge.surge.sh
