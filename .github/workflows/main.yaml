@@ -1,8 +1,9 @@
+name: Deploy to Surge
+
 on:
     push:
       branches:
-        
-  main
+        - main
   
   jobs:
     build:
