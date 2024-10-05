@@ -1,25 +1,22 @@
 name: Deploy to Surge
 
 on:
-    push:
-      branches:
-        - main
-  
-  jobs:
-    build:
-      runs-on: ubuntu-latest
-  
-      steps:
-      
-  name: Checkout code
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
       uses: actions/checkout@v2
-  
-      
-  name: Install Surge
+
+    - name: Install Surge
       run: npm install --global surge
-  
-      
-  name: Deploy to Surge.sh
+
+    - name: Deploy to Surge.sh
       env:
         SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
-      run: surge --project ./ --domain WebConSurge.surge.sh
+      run: surge --project ./ --domain WebConSurge.surge.sh 
